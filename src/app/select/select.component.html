@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-select placeholder="Favorite Fruit" [(ngModel)]="fruitselected">
+    <mat-option *ngFor="let food of fruits" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<br> {{fruitselected}}

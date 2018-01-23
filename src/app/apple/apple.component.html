@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Limit" [(ngModel)]="limit" (change)="random()" value="10">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Guess The Number" [(ngModel)]="guessrand" value="">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" *ngIf="view!=2" (click)="check()">Check</button>
+  <p *ngIf="view!=2">Attempts: {{attempts}}/5</p>
+  <p>{{message}}</p>
+  <p>{{greet}}</p>
+  <br>
+  <button mat-raised-button color="primary" *ngIf="view==2" (click)="view=1;playagain();">Play</button>
+
+</mat-card>

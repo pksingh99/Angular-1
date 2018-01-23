@@ -1,0 +1,17 @@
+<mat-sidenav-container class="example-container">
+  <mat-toolbar>
+    <div class="container">
+      <div class="example-sidenav-content">
+        <button mat-button class="sidenav-toggle mat-button" [ngStyle]="{'background':'transparent'}" (click)="sidenav.open()"><mat-icon>home</mat-icon>
+</button>
+      </div>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav #sidenav class="example-sidenav">
+    <p>I am sidenav</p>
+  </mat-sidenav>
+  <br>
+  <div class="container">
+    <p> I am container</p>
+  </div>
+</mat-sidenav-container>
