@@ -1,0 +1,14 @@
+<p>
+  {{birthday | date | uppercase}}
+</p>
+<p>
+  {{birthday | date:'fullDate'}}
+</p>
+
+<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
+<p>
+  {{money | currency:'INR'}}
+</p>
+<p>
+  Random Number {{ " "|customPipe:999999}}
+</p>

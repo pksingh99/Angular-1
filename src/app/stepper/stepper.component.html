@@ -1,5 +1,5 @@
-<mat-horizontal-stepper [linear]="isLinear">
-
+<mat-horizontal-stepper>
+  <!--
   <mat-step [stepControl]="firstFormGroup">
 
     <form [formGroup]="firstFormGroup">
@@ -33,13 +33,36 @@
 
     </form>
 
-  </mat-step>
-
+  </mat-step> -->
   <mat-step>
 
-    <ng-template matStepLabel>Done</ng-template>
-    Its Done.
     <div>
+      <p>
+        Hello
+      </p>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+
+    </div>
+
+  </mat-step>
+  <mat-step>
+
+    <div>
+      <p>
+        Hi
+      </p>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+
+    </div>
+
+  </mat-step>
+  <mat-step>
+    <div>
+      <p>
+        Hmmm
+      </p>
       <button mat-button matStepperPrevious>Back</button>
     </div>
 

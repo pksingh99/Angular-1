@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppleComponent } from './apple/apple.component';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+//import { HttpModule } from '@angular/http';
 import { MatSnackBarModule } from '@angular/material';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -46,6 +46,41 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ChipsComponent } from './chips/chips.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { ForobservableComponent } from './forobservable/forobservable.component';
+import { HttpClientModule } from '@angular/common/http'
+import { NewserviceService } from './newservice.service';
+import { TableComponent } from './table/table.component'
+import { MatTableModule } from '@angular/material/table';
+import { ForServiceComponent } from './for-service/for-service.component';
+import { ServiceOneService } from './service-one.service';
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PassParametersComponent } from './pass-parameters/pass-parameters.component';
+import { HighlightDirective } from './highlight.directive';
+import { ForNgSwitchDirectivesComponent } from './for-ng-switch-directives/for-ng-switch-directives.component';
+import { ForpipesComponent } from './forpipes/forpipes.component';
+import { CustomPipePipe } from './custom-pipe.pipe';
+
+
+const appRoutes: Routes = [
+  { path: '', component: ButtonComponent },
+  { path: 'button', component: ButtonComponent },
+  { path: 'chips', component: ChipsComponent },
+  { path: 'list', component: ListComponent },
+  { path: 'select', component: SelectComponent },
+  { path: 'silder', component: SliderComponent },
+  { path: 'autocomplete', component: AutocompleteComponent },
+  { path: 'checkbox', component: CheckboxComponent },
+  { path: 'date', component: DatepickerComponent },
+  { path: 'radio', component: RadioComponent },
+  { path: 'input', component: InputComponent },
+  { path: 'pipes', component: ForpipesComponent },
+  { path: 'case', component: ForNgSwitchDirectivesComponent },
+  { path: 'pass/:id/:name', component: PassParametersComponent },
+  { path: '**', component: PageNotFoundComponent }
+
+];
+
 
 @NgModule({
   declarations: [
@@ -68,15 +103,28 @@ import { MatChipsModule } from '@angular/material/chips';
     ExpansionPanelComponent,
     ButtonComponent,
     ButtonToggleComponent,
-    ChipsComponent
+    ChipsComponent,
+    ForobservableComponent,
+    TableComponent,
+    ForServiceComponent,
+    PageNotFoundComponent,
+    PassParametersComponent,
+    HighlightDirective,
+    ForNgSwitchDirectivesComponent,
+    ForpipesComponent,
+    CustomPipePipe
   ],
   imports: [MatSnackBarModule, MatAutocompleteModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule,
-    BrowserModule, BrowserAnimationsModule, FormsModule, HttpModule, MatRadioModule,
+    BrowserModule, BrowserAnimationsModule, FormsModule, MatRadioModule,
     MatSelectModule, MatSliderModule, MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatIconModule, MatToolbarModule,
     MatListModule, MatCardModule, MatStepperModule, ReactiveFormsModule, MatTabsModule, MatExpansionModule, MatButtonModule,
-    MatButtonToggleModule, MatChipsModule
+    MatButtonToggleModule, MatChipsModule, HttpClientModule, MatTableModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [NewserviceService, ServiceOneService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+}

@@ -16,5 +16,24 @@
 <app-expansion-panel></app-expansion-panel>
 <app-button></app-button>
 <app-button-toggle></app-button-toggle>
-<app-chips></app-chips>-->
+<app-chips></app-chips>
 <app-datepicker></app-datepicker>
+<app-stepper></app-stepper>
+<app-forobservable></app-forobservable>
+<app-for-service></app-for-service>-->
+<nav>
+  <a routerLink="/chips" routerLinkActive="active">Chips</a>
+  <a routerLink="/button" routerLinkActive="active">Button</a>
+  <a routerLink="/list" routerLinkActive="active">List</a>
+  <a routerLink="/select" routerLinkActive="active">Select</a>
+  <a routerLink="/silder" routerLinkActive="active">Slider</a>
+  <a routerLink="/date" routerLinkActive="active">Date</a>
+  <a routerLink="/radio" routerLinkActive="active">Radio</a>
+  <a routerLink="/input" routerLinkActive="active">Input</a>
+  <a routerLink="/pipes" routerLinkActive="active">Pipes</a>
+  <a [routerLink]="['/pass', id ,name]">Passing_Parameters</a>
+  <a routerLink="/case" routerLinkActive="active">Switch Case</a>
+
+</nav>
+
+<router-outlet></router-outlet>
