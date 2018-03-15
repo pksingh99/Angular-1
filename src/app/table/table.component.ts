@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-
+import {Observable} from 'rxjs/Rx';
 /**
  * @title Basic table
  */
@@ -11,12 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class TableComponent {
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-  }
+  dataSource = ELEMENT_DATA;
 }
 
 export interface Element {

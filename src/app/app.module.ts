@@ -60,11 +60,14 @@ import { HighlightDirective } from './highlight.directive';
 import { ForNgSwitchDirectivesComponent } from './for-ng-switch-directives/for-ng-switch-directives.component';
 import { ForpipesComponent } from './forpipes/forpipes.component';
 import { CustomPipePipe } from './custom-pipe.pipe';
-
+import { HeroComponent } from './hero/hero.component';
+import { ForLifeEventsComponent } from './for-life-events/for-life-events.component';
+import { AuthGuard } from './auth.guard';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
-  { path: 'button', component: ButtonComponent },
+  { path: 'button', component: ButtonComponent,canActivate:[AuthGuard] },
   { path: 'chips', component: ChipsComponent },
   { path: 'list', component: ListComponent },
   { path: 'select', component: SelectComponent },
@@ -77,6 +80,7 @@ const appRoutes: Routes = [
   { path: 'pipes', component: ForpipesComponent },
   { path: 'case', component: ForNgSwitchDirectivesComponent },
   { path: 'pass/:id/:name', component: PassParametersComponent },
+  { path: 'life', component: ForLifeEventsComponent },
   { path: '**', component: PageNotFoundComponent }
 
 ];
@@ -112,16 +116,18 @@ const appRoutes: Routes = [
     HighlightDirective,
     ForNgSwitchDirectivesComponent,
     ForpipesComponent,
-    CustomPipePipe
+    CustomPipePipe,
+    HeroComponent,
+    ForLifeEventsComponent
   ],
   imports: [MatSnackBarModule, MatAutocompleteModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule,
     BrowserModule, BrowserAnimationsModule, FormsModule, MatRadioModule,
     MatSelectModule, MatSliderModule, MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatIconModule, MatToolbarModule,
     MatListModule, MatCardModule, MatStepperModule, ReactiveFormsModule, MatTabsModule, MatExpansionModule, MatButtonModule,
     MatButtonToggleModule, MatChipsModule, HttpClientModule, MatTableModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),HttpModule
   ],
-  providers: [NewserviceService, ServiceOneService],
+  providers: [NewserviceService, ServiceOneService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

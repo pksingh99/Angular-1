@@ -21,6 +21,11 @@
 <app-stepper></app-stepper>
 <app-forobservable></app-forobservable>
 <app-for-service></app-for-service>-->
+<input type="text"  [(ngModel)]="sendText"/>
+<app-for-life-events [dogLove]="sendText"></app-for-life-events>
+
+
+
 <nav>
   <a routerLink="/chips" routerLinkActive="active">Chips</a>
   <a routerLink="/button" routerLinkActive="active">Button</a>
@@ -31,6 +36,7 @@
   <a routerLink="/radio" routerLinkActive="active">Radio</a>
   <a routerLink="/input" routerLinkActive="active">Input</a>
   <a routerLink="/pipes" routerLinkActive="active">Pipes</a>
+  <a routerLink="/life" routerLinkActive="active">Life</a>
   <a [routerLink]="['/pass', id ,name]">Passing_Parameters</a>
   <a routerLink="/case" routerLinkActive="active">Switch Case</a>
 

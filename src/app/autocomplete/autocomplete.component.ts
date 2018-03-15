@@ -13,4 +13,8 @@ export class AutocompleteComponent implements OnInit {
   }
   public namelist = ['Apple', 'Bat', 'Cat', 'Dog'];
 
+bareRe(a){
+
+  console.log("Dukor"+a);
+}
 }
