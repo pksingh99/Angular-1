@@ -64,6 +64,7 @@ import { HeroComponent } from './hero/hero.component';
 import { ForLifeEventsComponent } from './for-life-events/for-life-events.component';
 import { AuthGuard } from './auth.guard';
 import { HttpModule } from '@angular/http';
+import { ForFormsComponent } from './for-forms/for-forms.component';
 
 const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
@@ -81,6 +82,7 @@ const appRoutes: Routes = [
   { path: 'case', component: ForNgSwitchDirectivesComponent },
   { path: 'pass/:id/:name', component: PassParametersComponent },
   { path: 'life', component: ForLifeEventsComponent },
+  { path: 'form', component: ForFormsComponent },
   { path: '**', component: PageNotFoundComponent }
 
 ];
@@ -118,7 +120,8 @@ const appRoutes: Routes = [
     ForpipesComponent,
     CustomPipePipe,
     HeroComponent,
-    ForLifeEventsComponent
+    ForLifeEventsComponent,
+    ForFormsComponent
   ],
   imports: [MatSnackBarModule, MatAutocompleteModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule,
     BrowserModule, BrowserAnimationsModule, FormsModule, MatRadioModule,
